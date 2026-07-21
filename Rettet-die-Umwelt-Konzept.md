@@ -2,7 +2,7 @@
 
 *Ein Computerspiel von Josephine (11 Jahre)*
 
-Stand: 3. Juli 2026 · Phase: **Konzept** — Hauptfigur & erste Welt ausgewählt ✅
+Stand: 21. Juli 2026 · Phase: **Erste spielbare Version** 🎮 — das Spiel läuft (`Spiel/index.html`); Gefahr-Stufe & Feintuning werden noch entschieden
 
 ---
 
@@ -132,9 +132,9 @@ Josephine fängt gerade erst an. Diese Werkzeuge sind anfängerfreundlich und la
 
 ### 🛠️ Bald (erstes kleines Spiel bauen)
 
-6. **Werkzeug aussuchen** – Mit Scratch starten? (Empfehlung: ja)
-7. **Eine Welt in Scratch bauen** – Figur läuft, sammelt Dinge, Punkte zählen.
-8. **Bei Freunden/Familie testen** – Macht es Spaß? Was fehlt?
+6. ✅ **Werkzeug ausgesucht** – erledigt: echtes Browser-Spiel (HTML5/Canvas), nicht Scratch (siehe Abschnitt 7).
+7. ✅ **Eine Welt gebaut** – erledigt (21. Juli 2026): erste spielbare Version in `Spiel/index.html` – schwimmen, Öl fangen, sauberes Meer. Josephines Wahl aus Prototyp 3 & 4 wird als Nächstes eingebaut.
+8. **Bei Freunden/Familie testen** – Macht es Spaß? Was fehlt? *(Jetzt möglich!)*
 
 ### 🚀 Später (groß denken)
 
@@ -156,7 +156,7 @@ Josephine fängt gerade erst an. Diese Werkzeuge sind anfängerfreundlich und la
 - [ ] Gefahr-Stufe wählen (Prototyp 4) – Josephine hat sich umentschieden: mehr Spannung! 🔄
 - [x] Gewinn-Moment gewählt – das saubere Meer ✨
 - [x] Umfang v1 festgelegt – offener Meer-Bereich, Tablet zuerst, minimal
-- [ ] Erstes kleines Spiel gebaut
+- [x] Erstes kleines Spiel gebaut – 🎮 `Spiel/index.html` (21. Juli 2026): schwimmen, Öl fangen, sauberes Meer. Gefahr-Stufe & Schwierigkeits-Feintuning kommen nach Josephines Wahl dazu.
 
 ---
 
