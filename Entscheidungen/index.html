@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rettet die Umwelt – Entscheidungen</title>
+<style>
+  :root{
+    --sun:#ffce3a; --sun-deep:#ffb028; --aqua:#37c3e8; --sea:#0e6ea6; --deep:#0a3f66; --abyss:#06263f;
+    --coral:#ff8a5c; --kelp:#1fbf7a; --sky:#3aa6e6; --grape:#8a6bd6;
+    --foam:#f3fbff; --ink:#06304d; --ink-soft:#3f6a86; --card:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{
+    font-family:'Baloo 2','Fredoka','Chalkboard SE','Comic Sans MS','Trebuchet MS',system-ui,sans-serif;
+    color:var(--foam);
+    background:
+      radial-gradient(120% 70% at 50% -8%, rgba(255,255,255,.5), rgba(255,255,255,0) 45%),
+      linear-gradient(180deg,var(--aqua),var(--sea) 42%,var(--deep) 74%,var(--abyss));
+    padding:clamp(22px,4vw,52px) clamp(14px,4vw,40px) 70px;
+  }
+  .wrap{max-width:900px;margin:0 auto;}
+  header{text-align:center;margin-bottom:26px;}
+  .eyebrow{display:inline-block;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+    color:var(--sun);background:rgba(6,38,63,.35);padding:.35em 1em;border-radius:999px;box-shadow:inset 0 0 0 2px rgba(255,206,58,.35);}
+  h1{margin:.4em 0 .1em;font-size:clamp(2rem,6vw,3.4rem);line-height:1;color:var(--sun);text-wrap:balance;
+    text-shadow:-2px -2px 0 #06304d,2px -2px 0 #06304d,-2px 2px 0 #06304d,2px 2px 0 #06304d,0 4px 0 var(--sun-deep),0 7px 10px rgba(3,21,31,.4);}
+  .sub{font-weight:600;opacity:.95;font-size:clamp(1rem,3vw,1.25rem);max-width:640px;margin:.4em auto 0;}
+  .legend{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:16px;font-weight:700;font-size:.9rem;opacity:.95;}
+  .legend span{background:rgba(6,38,63,.3);padding:.3em .8em;border-radius:999px;}
+  h2{font-size:clamp(1.3rem,3.6vw,1.7rem);margin:34px 0 14px;color:var(--foam);
+     display:flex;align-items:center;gap:.5em;}
+  h2::after{content:"";flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.22);}
+
+  /* timeline of decided items */
+  .step{display:flex;gap:16px;background:var(--card);color:var(--ink);border-radius:18px;padding:16px 18px;margin-bottom:12px;
+    box-shadow:0 7px 0 rgba(3,21,31,.16),0 14px 26px rgba(3,21,31,.28);align-items:flex-start;}
+  .step .num{flex:none;width:2.1em;height:2.1em;border-radius:50%;background:var(--kelp);color:#fff;font-weight:800;
+    display:grid;place-items:center;box-shadow:0 3px 0 rgba(3,21,31,.22);}
+  .step .body{flex:1;min-width:0;}
+  .step h3{margin:.1em 0 .15em;font-size:1.12rem;}
+  .step p{margin:0;color:var(--ink-soft);font-weight:600;font-size:.98rem;line-height:1.35;}
+  .step .how{display:inline-block;margin-top:.5em;font-size:.8rem;font-weight:700;color:var(--sea);
+    background:rgba(14,110,166,.1);padding:.2em .7em;border-radius:999px;}
+  .step .thumb{flex:none;width:104px;height:78px;border-radius:12px;object-fit:cover;background:#cfeaf7;box-shadow:0 3px 0 rgba(3,21,31,.2);}
+
+  /* prototype cards */
+  .protos{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  @media(max-width:680px){.protos{grid-template-columns:1fr;}}
+  .proto{background:var(--card);color:var(--ink);border-radius:20px;overflow:hidden;text-decoration:none;color:inherit;
+    box-shadow:0 10px 0 rgba(3,21,31,.18),0 18px 32px rgba(3,21,31,.3);display:flex;flex-direction:column;
+    transition:transform .16s ease,box-shadow .16s ease;border-top:8px solid var(--accent);--accent:var(--sky);}
+  .proto:hover{transform:translateY(-6px);box-shadow:0 16px 0 rgba(3,21,31,.18),0 24px 44px rgba(3,21,31,.4);}
+  .proto.p2{--accent:var(--coral);}
+  .proto .phead{padding:16px 18px 0;}
+  .proto .tag{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:var(--accent);}
+  .proto h3{margin:.2em 0 .2em;font-size:1.3rem;color:var(--ink);}
+  .proto p{margin:0 18px;color:var(--ink-soft);font-weight:600;font-size:.95rem;line-height:1.35;flex:1;}
+  .proto .go{margin:14px 18px 18px;background:var(--accent);color:#fff;font-weight:800;text-align:center;
+    padding:.6em;border-radius:14px;box-shadow:0 4px 0 rgba(3,21,31,.25);}
+
+  /* open list */
+  .open{background:rgba(255,255,255,.1);border:2px dashed rgba(255,255,255,.35);border-radius:18px;padding:8px 6px;}
+  .open li{list-style:none;padding:12px 16px;border-radius:12px;margin:6px;background:rgba(6,38,63,.25);font-weight:700;}
+  .open li b{color:var(--sun);}
+  .open li span{display:block;font-weight:600;opacity:.9;font-size:.92rem;margin-top:.15em;}
+
+  /* links */
+  .links{display:flex;flex-wrap:wrap;gap:10px;}
+  .links a{background:rgba(255,255,255,.9);color:var(--ink);text-decoration:none;font-weight:800;font-size:.92rem;
+    padding:.55em 1em;border-radius:12px;box-shadow:0 4px 0 rgba(3,21,31,.22);}
+  .links a:hover{background:#fff;}
+  footer{text-align:center;margin-top:40px;font-weight:600;opacity:.8;font-size:.95rem;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="eyebrow">🌊 Rettet die Umwelt · von Josephine</span>
+    <h1>Unsere Entscheidungen</h1>
+    <p class="sub">Unser Weg zum Spiel: Was wir schon entschieden haben – und was als Nächstes dran ist.</p>
+    <div class="legend"><span>✅ Entschieden</span><span>🔬 Zum Ausprobieren</span><span>🟡 Noch offen</span></div>
+  </header>
+
+  <h2>✅ Schon entschieden</h2>
+
+  <div class="step"><div class="num">1</div><div class="body">
+    <h3>Name &amp; Thema</h3>
+    <p><b>Rettet die Umwelt</b> – die Natur schützen und das Meer sauber machen.</p>
+  </div></div>
+
+  <div class="step"><div class="num">2</div><div class="body">
+    <h3>Plattform &amp; Sprache</h3>
+    <p>Läuft im <b>Browser</b>, auf <b>Tablet und Computer</b>. Auf <b>Deutsch</b>.</p>
+  </div></div>
+
+  <div class="step"><div class="num">3</div><div class="body">
+    <h3>Spielart</h3>
+    <p><b>Unterwasser-Sammelspiel.</b> Zuerst als „Side-Scroller" gedacht – jetzt <b>frei schwimmen</b> (siehe Nr. 9).</p>
+    <span class="how">gewählt in „Wie möchtest du spielen?"</span>
+  </div></div>
+
+  <div class="step"><div class="num">4</div>
+    <div class="body">
+      <h3>Hauptfigur 🦦</h3>
+      <p><b>Carl der Otter</b> – mit Taucherbrille und Kescher.</p>
+      <span class="how">gewählt in „Wähle deinen Helden!"</span>
+    </div>
+    <img class="thumb" src="../Ideen-Bilder/Held-4-Otter.png" alt="Carl der Otter" />
+  </div>
+
+  <div class="step"><div class="num">5</div>
+    <div class="body">
+      <h3>Erste Welt 🌊</h3>
+      <p><b>Das verschmutzte Meer</b> – ausgelaufenes Öl einsammeln.</p>
+    </div>
+    <img class="thumb" src="../Ideen-Bilder/Welt1-Carl-Seitwaerts.png" alt="Welt 1 mit Carl" />
+  </div>
+
+  <div class="step"><div class="num" style="background:var(--sun);color:#06304d;">6</div><div class="body">
+    <h3>Stimmung 🔄</h3>
+    <p>Erst „ganz friedlich" – aber Josephine hat sich umentschieden: <b>Es soll Gefahr geben!</b> Wie viel, sucht sie gerade in Prototyp 4 aus. Fest steht: Verlieren bleibt immer sanft – Carl ist nie in echter Not.</p>
+    <span class="how">wird neu entschieden · <a href="prototyp-4-gefahr.html">Prototyp 4 spielen</a></span>
+  </div></div>
+
+  <div class="step"><div class="num">7</div><div class="body">
+    <h3>Technik</h3>
+    <p>Ein <b>echtes Browser-Spiel</b> (HTML5/Canvas, kein Baukasten) – das man selbst ins Internet stellen kann. Papa programmiert mit, Josephine gestaltet.</p>
+  </div></div>
+
+  <div class="step"><div class="num">8</div><div class="body">
+    <h3>Sound</h3>
+    <p><b>Kein Sound</b> für die allererste Version (die „MVP"). Musik &amp; Geräusche kommen später.</p>
+  </div></div>
+
+  <div class="step"><div class="num">9</div><div class="body">
+    <h3>Bewegung 🐠</h3>
+    <p><b>Frei schwimmen</b> – in alle Richtungen (oben, unten, links, rechts), schön schwebend. Kein Hüpfen.</p>
+    <span class="how">ausprobiert in „Prototyp 1" · <a href="prototyp-1-bewegung.html">nochmal spielen</a></span>
+  </div></div>
+
+  <div class="step"><div class="num">10</div><div class="body">
+    <h3>Sammeln 🥅</h3>
+    <p>Öl mit dem <b>Kescher fangen</b> – Knopf drücken und aktiv fangen.</p>
+    <span class="how">ausprobiert in „Prototyp 2" · <a href="prototyp-2-sammeln.html">nochmal spielen</a></span>
+  </div></div>
+
+  <div class="step"><div class="num">11</div>
+    <div class="body">
+      <h3>Gewinnen ✨</h3>
+      <p><b>Das saubere Meer</b> – ist alles Öl weg, wird das Wasser wieder klar und alle Tiere freuen sich.</p>
+      <span class="how">gewählt in „Wie fühlt sich Gewinnen an?" · <a href="wie-gewinnt-man.html">nochmal ansehen</a></span>
+    </div>
+    <img class="thumb" src="../Ideen-Bilder/Sieg-A-Sauberes-Meer.png" alt="Das saubere Meer" />
+  </div>
+
+  <div class="step"><div class="num">12</div><div class="body">
+    <h3>Umfang der ersten Version</h3>
+    <p><b>Ein offener Meer-Bereich</b> (ein Bildschirm), zuerst fürs <b>Tablet</b>, ganz einfach: schwimmen + Öl fangen + gewinnen.</p>
+  </div></div>
+
+  <h2>🔬 Jetzt dran: ausprobieren</h2>
+  <p style="font-weight:600;opacity:.95;margin:0 0 14px;">Josephine wollte <b>mehr Spannung</b> – deshalb gibt es jetzt vier Gefahr-Stufen zum Fühlen. Danach: die Schwierigkeit fein einstellen.</p>
+  <div class="protos">
+    <a class="proto p2" href="prototyp-4-gefahr.html">
+      <div class="phead"><div class="tag">Prototyp 4 · Neu!</div><h3>Wie gefährlich soll es sein?</h3></div>
+      <p>Freche Monster, die vor dem Kescher <b>davonflitzen</b> 😜, eine <b>Qualle</b>, die dir Öl abluchst 🪼, oder richtige <b>Herzen</b> ❤️? Probier alle vier Stufen!</p>
+      <div class="go">▶ Ausprobieren</div>
+    </a>
+    <a class="proto p1" href="prototyp-3-schwierigkeit.html">
+      <div class="phead"><div class="tag">Prototyp 3</div><h3>Wie schwer soll es sein?</h3></div>
+      <p>Treibt das Öl davon? Wird es mehr, wenn man trödelt? Gibt es Sterne? Dreh an den <b>Schwierigkeits-Reglern</b>!</p>
+      <div class="go">▶ Ausprobieren</div>
+    </a>
+  </div>
+
+  <h2>🟡 Noch offen (danach)</h2>
+  <ul class="open">
+    <li><b>Wie viel Öl &amp; wie schwer?</b><span>Wie viele Öl-Kleckse, wie schnell treiben sie? Stellen wir beim Spielen am „Schwierigkeits-Regler" ein.</span></li>
+    <li><b>Sterne fürs Aufräumen?</b><span>Bekommt man 1–3 Sterne, je nachdem wie schnell/sauber man war? (Macht Lust, es nochmal besser zu machen.)</span></li>
+    <li><b>Startbildschirm</b><span>Wie sieht der Anfang aus – „Los geht's, Carl!" Knopf?</span></li>
+  </ul>
+
+  <h2>📎 Zum Nachschauen</h2>
+  <div class="links">
+    <a href="../Ideen-Bilder/spiel-werkstatt.html">🛠️ Spiel-Werkstatt</a>
+    <a href="../Ideen-Bilder/waehle-deinen-helden.html">🦸 Held wählen</a>
+    <a href="../Ideen-Bilder/wie-moechtest-du-spielen.html">🌊 Spielart</a>
+    <a href="../Ideen-Bilder/friedlich-oder-monster.html">🐙 Stimmung</a>
+    <a href="../Rettet-die-Umwelt-Konzept.md.pdf">📄 Konzept (PDF)</a>
+  </div>
+
+  <footer>Stand: 9. Juli 2026 · Jede große Firma hat mal mit einer einzigen Idee angefangen. 🌱</footer>
+</div>
+</body>
+</html>
