@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <title>Carl der Otter – Rettet die Umwelt</title>
+  <rect width="128" height="128" rx="28" fill="#0a3f66"/>
+  <path d="M0 91Q24 78 48 91T96 91T144 91V128H0Z" fill="#37c3e8"/>
+  <g stroke="#06304d" stroke-width="4" stroke-linejoin="round">
+    <circle cx="32" cy="43" r="13" fill="#ad7549"/>
+    <circle cx="96" cy="43" r="13" fill="#ad7549"/>
+    <path d="M64 29C40 29 26 45 26 68C26 94 43 104 64 104S102 94 102 68C102 45 88 29 64 29Z" fill="#ad7549"/>
+  </g>
+  <path d="M36 68C37 53 54 51 64 65C74 51 91 53 92 68C96 88 81 96 64 96S32 88 36 68Z" fill="#ffe0ac"/>
+  <g fill="#06304d">
+    <ellipse cx="46" cy="58" rx="4" ry="5"/>
+    <ellipse cx="82" cy="58" rx="4" ry="5"/>
+    <path d="M56 70Q64 66 72 70Q72 75 64 79Q56 75 56 70Z"/>
+  </g>
+  <path d="M64 78V82M54 83Q59 88 64 82Q69 88 74 83M29 73L43 76M28 82L42 81M99 73L85 76M100 82L86 81" fill="none" stroke="#06304d" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="107" cy="22" r="6" fill="#7be0aa"/>
+  <circle cx="20" cy="19" r="4" fill="#37c3e8"/>
+</svg>

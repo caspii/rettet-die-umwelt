@@ -2,9 +2,15 @@
 <html lang="de">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Rettet die Umwelt – Welt 1: Das verschmutzte Meer</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦦</text></svg>" />
+<meta name="theme-color" content="#0a3f66" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Rettet die Umwelt" />
+<link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48" />
+<link rel="icon" type="image/svg+xml" sizes="any" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Ctitle%3ECarl%20der%20Otter%20%E2%80%93%20Rettet%20die%20Umwelt%3C%2Ftitle%3E%0A%20%20%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22%230a3f66%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M0%2091Q24%2078%2048%2091T96%2091T144%2091V128H0Z%22%20fill%3D%22%2337c3e8%22%2F%3E%0A%20%20%3Cg%20stroke%3D%22%2306304d%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2243%22%20r%3D%2213%22%20fill%3D%22%23ad7549%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2296%22%20cy%3D%2243%22%20r%3D%2213%22%20fill%3D%22%23ad7549%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M64%2029C40%2029%2026%2045%2026%2068C26%2094%2043%20104%2064%20104S102%2094%20102%2068C102%2045%2088%2029%2064%2029Z%22%20fill%3D%22%23ad7549%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%20%20%3Cpath%20d%3D%22M36%2068C37%2053%2054%2051%2064%2065C74%2051%2091%2053%2092%2068C96%2088%2081%2096%2064%2096S32%2088%2036%2068Z%22%20fill%3D%22%23ffe0ac%22%2F%3E%0A%20%20%3Cg%20fill%3D%22%2306304d%22%3E%0A%20%20%20%20%3Cellipse%20cx%3D%2246%22%20cy%3D%2258%22%20rx%3D%224%22%20ry%3D%225%22%2F%3E%0A%20%20%20%20%3Cellipse%20cx%3D%2282%22%20cy%3D%2258%22%20rx%3D%224%22%20ry%3D%225%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M56%2070Q64%2066%2072%2070Q72%2075%2064%2079Q56%2075%2056%2070Z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%20%20%3Cpath%20d%3D%22M64%2078V82M54%2083Q59%2088%2064%2082Q69%2088%2074%2083M29%2073L43%2076M28%2082L42%2081M99%2073L85%2076M100%2082L86%2081%22%20fill%3D%22none%22%20stroke%3D%22%2306304d%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%22107%22%20cy%3D%2222%22%20r%3D%226%22%20fill%3D%22%237be0aa%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%2220%22%20cy%3D%2219%22%20r%3D%224%22%20fill%3D%22%2337c3e8%22%2F%3E%0A%3C%2Fsvg%3E%0A" />
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="manifest" href="../site.webmanifest" />
 <!--
   ============================================================
   RETTET DIE UMWELT · Welt 1: Das verschmutzte Meer
@@ -39,7 +45,8 @@
             calc(6px + env(safe-area-inset-bottom)) calc(8px + env(safe-area-inset-left));
   }
   .stagewrap{
-    position:relative; width:min(96vw, calc((100dvh - 56px) * 1.6), 1080px);
+    position:relative; flex-shrink:0; max-width:100%;
+    width:min(96vw, calc((100dvh - 56px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) * 1.6), 1080px);
     border-radius:20px; overflow:hidden; line-height:0;
     box-shadow:0 12px 0 rgba(3,21,31,.25), 0 20px 44px rgba(3,21,31,.45);
   }
@@ -49,7 +56,8 @@
     font-weight:800; font-size:clamp(1rem,2.9vw,1.4rem); padding:.25em .7em; border-radius:12px;}
   .neu{position:absolute; top:12px; right:14px; font-family:inherit; font-weight:800; border:none;
     border-radius:12px; background:rgba(255,255,255,.85); color:var(--ink); cursor:pointer;
-    padding:.35em .8em; box-shadow:0 3px 0 rgba(3,21,31,.25); font-size:clamp(.85rem,2.2vw,1rem);}
+    padding:.35em .8em; min-height:44px; min-width:44px; touch-action:manipulation;
+    box-shadow:0 3px 0 rgba(3,21,31,.25); font-size:clamp(.85rem,2.2vw,1rem);}
   .neu:active{transform:translateY(2px);}
 
   .pad{position:absolute; bottom:16px; left:16px; display:grid;
@@ -73,7 +81,8 @@
   #siegBildschirm{pointer-events:none; align-items:flex-start; padding-top:6%;}
   .karte{background:linear-gradient(180deg,rgba(10,63,102,.92),rgba(6,38,63,.94));
     border:3px solid rgba(255,255,255,.25); border-radius:22px; padding:22px clamp(18px,4vw,40px);
-    max-width:min(560px,92%); box-shadow:0 14px 40px rgba(3,21,31,.5); pointer-events:auto;
+    max-width:min(560px,92%); max-height:100%; overflow-y:auto;
+    box-shadow:0 14px 40px rgba(3,21,31,.5); pointer-events:auto;
     animation:rein .45s ease-out;}
   @keyframes rein{from{transform:translateY(14px) scale(.96); opacity:0;} to{transform:none; opacity:1;}}
   .titel{font-size:clamp(1.7rem,5.5vw,2.7rem); font-weight:800; color:var(--sun);
@@ -94,10 +103,10 @@
     <div class="hud" id="hud">🛢️ 0 / 8</div>
     <button class="neu" id="neuKnopf" title="Von vorn anfangen">↻ Neu</button>
     <div class="pad" id="pad">
-      <button class="hoch"   data-k="hoch">▲</button>
-      <button class="li"     data-k="links">◀</button>
-      <button class="re"     data-k="rechts">▶</button>
-      <button class="runter" data-k="runter">▼</button>
+      <button class="hoch"   data-k="hoch" aria-label="Nach oben schwimmen">▲</button>
+      <button class="li"     data-k="links" aria-label="Nach links schwimmen">◀</button>
+      <button class="re"     data-k="rechts" aria-label="Nach rechts schwimmen">▶</button>
+      <button class="runter" data-k="runter" aria-label="Nach unten schwimmen">▼</button>
     </div>
     <button class="fang" id="fangKnopf">Fangen 🥅</button>
 
@@ -185,6 +194,7 @@ function hudAktualisieren() {
 }
 
 function spielStarten() {
+  steuerungLoslassen();
   document.getElementById('startBildschirm').classList.add('verborgen');
   document.getElementById('siegBildschirm').classList.add('verborgen');
   neuAussetzen();
@@ -215,6 +225,16 @@ function fangen() {
 }
 
 // ---------- Steuerung: Bildschirm-Knöpfe (Tablet) ----------
+function steuerungLoslassen() {
+  for (const k of Object.keys(gedrueckt)) gedrueckt[k] = false;
+  document.querySelectorAll('.press').forEach(b => b.classList.remove('press'));
+}
+// Beim App-Wechsel kann das Loslassen des Fingers oder einer Taste verloren gehen.
+addEventListener('blur', steuerungLoslassen);
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) steuerungLoslassen();
+});
+
 function halteKnopf(el, k) {
   const an  = e => { e.preventDefault(); gedrueckt[k] = true;  el.classList.add('press'); };
   const aus = e => { e.preventDefault(); gedrueckt[k] = false; el.classList.remove('press'); };
