@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Rettet die Umwelt** ("Save the Environment") is a browser game created **by and with Josephine, age 11**. Since 21 Jul 2026 there is a **first playable version**: `Spiel/index.html` — Welt 1 core loop (free-swim + net-scoop + clean-sea win), built to the decided v1 scope. The repo also holds the design doc, decision log, prototypes, and artwork.
 
-There is deliberately **no build system, no package manager, no framework** (decided: plain JS + Canvas, single self-contained HTML file per game/prototype — must stay double-click-openable via `file://`, so no `fetch`, no ES modules, no external asset references; Carl is embedded as a base64 data URI). No test suite; verification is running the game (see below).
+There is deliberately **no build system, no package manager, no framework** (decided: plain JS + Canvas, single self-contained HTML file per game/prototype — must stay double-click-openable via `file://`, so no `fetch`, no ES modules, no external gameplay asset references; Carl is embedded as a base64 data URI). The game and root entry link optional local favicon/home-screen assets and `site.webmanifest` for deployment; the SVG tab icon stays embedded, and gameplay does not depend on these files. No test suite; verification is running the game (see below).
 
 ## Running & verifying the game
 
